@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "358560153921",
+    "firebase_url": "https://streakifyy-bcaec-default-rtdb.firebaseio.com",
+    "project_id": "streakifyy-bcaec",
+    "storage_bucket": "streakifyy-bcaec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:358560153921:android:25b0a57eb77dd1928821c0",
+        "android_client_info": {
+          "package_name": "com.navindu.streakifyy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAE8wp45rLZdjxPxmSSace9UqzwP3soYyE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
