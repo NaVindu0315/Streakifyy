@@ -53,6 +53,7 @@ class _DashhState extends State<Dashh> {
         ),
         body: Column(
           children: [
+            ///first event
             SizedBox(
               height: 30,
             ),
@@ -86,7 +87,7 @@ class _DashhState extends State<Dashh> {
               ),
             ),
             SizedBox(
-              height: 40.0,
+              height: 20.0,
             ),
 
             ///to display count
@@ -125,37 +126,266 @@ class _DashhState extends State<Dashh> {
             Row(
               children: [
                 // Rounded ElevatedButton
+                Spacer(),
+
+                ///reset button
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
+                    primary: Colors.red, // Add this to set the button color
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.0),
                     ),
                   ),
                   onPressed: () {},
-                  child: Text('+1 Day'),
-                ),
-
-// Rounded OutlinedButton
-                OutlinedButton(
-                  style: OutlinedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize
+                        .min, // To ensure the button doesn't take up too much space
+                    children: [
+                      Icon(
+                        Icons.lock_reset, // Add the icon
+                        size: 24.0, // Change the icon size
+                        color: Colors.white, // Change the icon color
+                      ),
+                      Text(
+                        'Reset',
+                        style: TextStyle(
+                          color: Colors.white, // Change the text color
+                          fontSize: 18.0, // Change the text size
+                        ),
+                      ),
+                    ],
                   ),
-                  onPressed: () {},
-                  child: Text('-1 Day'),
                 ),
+                Spacer(),
 
-// Rounded ElevatedButton for Reset
+                ///decrease button
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
+                    primary: Colors.green, // Add this to set the button color
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.0),
                     ),
                   ),
                   onPressed: () {},
-                  child: Text('Reset'),
-                )
+                  child: Row(
+                    mainAxisSize: MainAxisSize
+                        .min, // To ensure the button doesn't take up too much space
+                    children: [
+                      Icon(
+                        Icons.exposure_minus_1, // Add the icon
+                        size: 24.0, // Change the icon size
+                        color: Colors.white, // Change the icon color
+                      ),
+                      Text(
+                        'Day',
+                        style: TextStyle(
+                          color: Colors.white, // Change the text color
+                          fontSize: 18.0, // Change the text size
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Spacer(),
+
+                ///increase button
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.green, // Add this to set the button color
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                  ),
+                  onPressed: () {},
+                  child: Row(
+                    mainAxisSize: MainAxisSize
+                        .min, // To ensure the button doesn't take up too much space
+                    children: [
+                      Icon(
+                        Icons.plus_one, // Add the icon
+                        size: 24.0, // Change the icon size
+                        color: Colors.white, // Change the icon color
+                      ),
+                      Text(
+                        'Day',
+                        style: TextStyle(
+                          color: Colors.white, // Change the text color
+                          fontSize: 18.0, // Change the text size
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
+                Spacer(),
+              ],
+            ),
+
+            ///second event
+            SizedBox(
+              height: 50,
+            ),
+            SizedBox(
+              height: 100.0,
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  // <--- Add this
+                  borderRadius: BorderRadius.circular(
+                      60.0), // adjust the value to your liking
+                ),
+                color: Colors.green,
+                child: Container(
+                  width: double
+                      .infinity, // This will make the Card take up all the available space in the row
+                  child: Column(
+                    mainAxisAlignment:
+                        MainAxisAlignment.center, // <--- Add this
+                    children: [
+                      Text(
+                        'Event',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 30.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
+
+            ///to display count
+            SizedBox(
+              height: 100.0,
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  // <--- Add this
+                  borderRadius: BorderRadius.circular(
+                      30.0), // adjust the value to your liking
+                ),
+                color: Colors.orange,
+                child: Container(
+                  width:
+                      200.0, // This will make the Card take up all the available space in the row
+                  child: Column(
+                    mainAxisAlignment:
+                        MainAxisAlignment.center, // <--- Add this
+                    children: [
+                      Text(
+                        '0',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 30.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 40.0,
+            ),
+            Row(
+              children: [
+                // Rounded ElevatedButton
+                Spacer(),
+
+                ///reset button
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.red, // Add this to set the button color
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                  ),
+                  onPressed: () {},
+                  child: Row(
+                    mainAxisSize: MainAxisSize
+                        .min, // To ensure the button doesn't take up too much space
+                    children: [
+                      Icon(
+                        Icons.lock_reset, // Add the icon
+                        size: 24.0, // Change the icon size
+                        color: Colors.white, // Change the icon color
+                      ),
+                      Text(
+                        'Reset',
+                        style: TextStyle(
+                          color: Colors.white, // Change the text color
+                          fontSize: 18.0, // Change the text size
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Spacer(),
+
+                ///decrease button
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.green, // Add this to set the button color
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                  ),
+                  onPressed: () {},
+                  child: Row(
+                    mainAxisSize: MainAxisSize
+                        .min, // To ensure the button doesn't take up too much space
+                    children: [
+                      Icon(
+                        Icons.exposure_minus_1, // Add the icon
+                        size: 24.0, // Change the icon size
+                        color: Colors.white, // Change the icon color
+                      ),
+                      Text(
+                        'Day',
+                        style: TextStyle(
+                          color: Colors.white, // Change the text color
+                          fontSize: 18.0, // Change the text size
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Spacer(),
+
+                ///increase button
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.green, // Add this to set the button color
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                  ),
+                  onPressed: () {},
+                  child: Row(
+                    mainAxisSize: MainAxisSize
+                        .min, // To ensure the button doesn't take up too much space
+                    children: [
+                      Icon(
+                        Icons.plus_one, // Add the icon
+                        size: 24.0, // Change the icon size
+                        color: Colors.white, // Change the icon color
+                      ),
+                      Text(
+                        'Day',
+                        style: TextStyle(
+                          color: Colors.white, // Change the text color
+                          fontSize: 18.0, // Change the text size
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
+                Spacer(),
               ],
             ),
           ],
