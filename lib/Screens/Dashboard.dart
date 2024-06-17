@@ -54,12 +54,36 @@ class _DashhState extends State<Dashh> {
         body: Column(
           children: [
             Spacer(),
-            Row(
+            /* Row(
               children: [
                 Spacer(),
                 Text('Test'),
                 Spacer(),
               ],
+            ),*/
+            SizedBox(
+              height: 100.0,
+              child: Card(
+                color: Colors.green,
+                child: Container(
+                  width: double
+                      .infinity, // This will make the Card take up all the available space in the row
+                  child: Column(
+                    mainAxisAlignment:
+                        MainAxisAlignment.center, // <--- Add this
+                    children: [
+                      Text(
+                        'Event',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 30.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ),
             Spacer(),
           ],
