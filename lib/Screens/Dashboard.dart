@@ -41,6 +41,26 @@ class _DashhState extends State<Dashh> {
     await _count2.set(0);
   }
 
+  Future<void> add1() async {
+    count1++;
+    await _count1.set(count1);
+  }
+
+  Future<void> add2() async {
+    count2++;
+    await _count2.set(count2);
+  }
+
+  Future<void> minus1() async {
+    count1--;
+    await _count1.set(count1);
+  }
+
+  Future<void> minus2() async {
+    count2--;
+    await _count2.set(count2);
+  }
+
   @override
   void initState() {
     super.initState();
@@ -235,7 +255,9 @@ class _DashhState extends State<Dashh> {
                       borderRadius: BorderRadius.circular(10.0),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    minus1();
+                  },
                   child: Row(
                     mainAxisSize: MainAxisSize
                         .min, // To ensure the button doesn't take up too much space
@@ -265,7 +287,9 @@ class _DashhState extends State<Dashh> {
                       borderRadius: BorderRadius.circular(10.0),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    add1();
+                  },
                   child: Row(
                     mainAxisSize: MainAxisSize
                         .min, // To ensure the button doesn't take up too much space
@@ -405,7 +429,9 @@ class _DashhState extends State<Dashh> {
                       borderRadius: BorderRadius.circular(10.0),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    minus2();
+                  },
                   child: Row(
                     mainAxisSize: MainAxisSize
                         .min, // To ensure the button doesn't take up too much space
@@ -435,7 +461,9 @@ class _DashhState extends State<Dashh> {
                       borderRadius: BorderRadius.circular(10.0),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    add2();
+                  },
                   child: Row(
                     mainAxisSize: MainAxisSize
                         .min, // To ensure the button doesn't take up too much space
