@@ -32,6 +32,15 @@ class _DashhState extends State<Dashh> {
   late DatabaseReference _count1;
   late DatabaseReference _count2;
 
+  ///functiions to set values
+  Future<void> reset1() async {
+    await _count1.set(0);
+  }
+
+  Future<void> reset2() async {
+    await _count2.set(0);
+  }
+
   @override
   void initState() {
     super.initState();
@@ -194,7 +203,9 @@ class _DashhState extends State<Dashh> {
                       borderRadius: BorderRadius.circular(10.0),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    reset1();
+                  },
                   child: Row(
                     mainAxisSize: MainAxisSize
                         .min, // To ensure the button doesn't take up too much space
@@ -362,7 +373,9 @@ class _DashhState extends State<Dashh> {
                       borderRadius: BorderRadius.circular(10.0),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    reset2();
+                  },
                   child: Row(
                     mainAxisSize: MainAxisSize
                         .min, // To ensure the button doesn't take up too much space
