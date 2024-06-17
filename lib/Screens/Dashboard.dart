@@ -24,6 +24,8 @@ class _DashhState extends State<Dashh> {
   String event2 = "";
   int count1 = 0;
   int count2 = 0;
+  String c1 = "";
+  String c2 = "";
 
   late DatabaseReference _event1;
   late DatabaseReference _event2;
@@ -38,6 +40,41 @@ class _DashhState extends State<Dashh> {
     _event2 = FirebaseDatabase.instance.reference().child('test/diet/event');
     _count1 = FirebaseDatabase.instance.reference().child('test/gym/count');
     _count2 = FirebaseDatabase.instance.reference().child('test/diet/count');
+
+    _event1.onValue.listen((event) {
+      final snapshot = event.snapshot;
+      if (snapshot.value != null) {
+        setState(() {
+          event1 = snapshot.value.toString();
+        });
+      }
+    });
+    _event2.onValue.listen((event) {
+      final snapshot = event.snapshot;
+      if (snapshot.value != null) {
+        setState(() {
+          event2 = snapshot.value.toString();
+        });
+      }
+    });
+    _count1.onValue.listen((event) {
+      final snapshot = event.snapshot;
+      if (snapshot.value != null) {
+        setState(() {
+          c1 = snapshot.value.toString();
+          count1 = int.parse(c1);
+        });
+      }
+    });
+    _count2.onValue.listen((event) {
+      final snapshot = event.snapshot;
+      if (snapshot.value != null) {
+        setState(() {
+          c2 = snapshot.value.toString();
+          count2 = int.parse(c2);
+        });
+      }
+    });
   }
 
   @override
@@ -95,7 +132,7 @@ class _DashhState extends State<Dashh> {
                         MainAxisAlignment.center, // <--- Add this
                     children: [
                       Text(
-                        'Event',
+                        event1,
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 30.0,
@@ -129,7 +166,7 @@ class _DashhState extends State<Dashh> {
                         MainAxisAlignment.center, // <--- Add this
                     children: [
                       Text(
-                        '0',
+                        '$count1',
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 30.0,
@@ -263,7 +300,7 @@ class _DashhState extends State<Dashh> {
                         MainAxisAlignment.center, // <--- Add this
                     children: [
                       Text(
-                        'Event',
+                        event2,
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 30.0,
@@ -297,7 +334,7 @@ class _DashhState extends State<Dashh> {
                         MainAxisAlignment.center, // <--- Add this
                     children: [
                       Text(
-                        '0',
+                        '$count2',
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 30.0,
