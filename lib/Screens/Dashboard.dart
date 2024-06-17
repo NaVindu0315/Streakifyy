@@ -98,18 +98,18 @@ class _DashhState extends State<Dashh> {
                   borderRadius: BorderRadius.circular(
                       30.0), // adjust the value to your liking
                 ),
-                color: Colors.green,
+                color: Colors.orange,
                 child: Container(
-                  width: double
-                      .infinity, // This will make the Card take up all the available space in the row
+                  width:
+                      200.0, // This will make the Card take up all the available space in the row
                   child: Column(
                     mainAxisAlignment:
                         MainAxisAlignment.center, // <--- Add this
                     children: [
                       Text(
-                        'Event',
+                        '0',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontSize: 30.0,
                           fontWeight: FontWeight.bold,
                         ),
@@ -118,6 +118,45 @@ class _DashhState extends State<Dashh> {
                   ),
                 ),
               ),
+            ),
+            SizedBox(
+              height: 40.0,
+            ),
+            Row(
+              children: [
+                // Rounded ElevatedButton
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                  ),
+                  onPressed: () {},
+                  child: Text('+1 Day'),
+                ),
+
+// Rounded OutlinedButton
+                OutlinedButton(
+                  style: OutlinedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                  ),
+                  onPressed: () {},
+                  child: Text('-1 Day'),
+                ),
+
+// Rounded ElevatedButton for Reset
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                  ),
+                  onPressed: () {},
+                  child: Text('Reset'),
+                )
+              ],
             ),
           ],
         ),
