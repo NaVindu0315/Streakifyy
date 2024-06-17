@@ -53,17 +53,17 @@ class _DashhState extends State<Dashh> {
         ),
         body: Column(
           children: [
-            Spacer(),
-            /* Row(
-              children: [
-                Spacer(),
-                Text('Test'),
-                Spacer(),
-              ],
-            ),*/
+            SizedBox(
+              height: 30,
+            ),
             SizedBox(
               height: 100.0,
               child: Card(
+                shape: RoundedRectangleBorder(
+                  // <--- Add this
+                  borderRadius: BorderRadius.circular(
+                      60.0), // adjust the value to your liking
+                ),
                 color: Colors.green,
                 child: Container(
                   width: double
@@ -85,7 +85,40 @@ class _DashhState extends State<Dashh> {
                 ),
               ),
             ),
-            Spacer(),
+            SizedBox(
+              height: 40.0,
+            ),
+
+            ///to display count
+            SizedBox(
+              height: 100.0,
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  // <--- Add this
+                  borderRadius: BorderRadius.circular(
+                      30.0), // adjust the value to your liking
+                ),
+                color: Colors.green,
+                child: Container(
+                  width: double
+                      .infinity, // This will make the Card take up all the available space in the row
+                  child: Column(
+                    mainAxisAlignment:
+                        MainAxisAlignment.center, // <--- Add this
+                    children: [
+                      Text(
+                        'Event',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 30.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
