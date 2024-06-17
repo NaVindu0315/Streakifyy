@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -19,6 +20,26 @@ class Dashh extends StatefulWidget {
 }
 
 class _DashhState extends State<Dashh> {
+  String event1 = "";
+  String event2 = "";
+  int count1 = 0;
+  int count2 = 0;
+
+  late DatabaseReference _event1;
+  late DatabaseReference _event2;
+  late DatabaseReference _count1;
+  late DatabaseReference _count2;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _event1 = FirebaseDatabase.instance.reference().child('test/gym/event');
+    _event2 = FirebaseDatabase.instance.reference().child('test/diet/event');
+    _count1 = FirebaseDatabase.instance.reference().child('test/gym/count');
+    _count2 = FirebaseDatabase.instance.reference().child('test/diet/count');
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
