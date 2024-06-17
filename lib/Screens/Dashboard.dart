@@ -23,13 +23,41 @@ class _DashhState extends State<Dashh> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        appBar: AppBar(
+          // preferredSize: Size.fromHeight(kToolbarHeight + 20),
+          backgroundColor: Colors.green,
+          /* leading: IconButton(
+            icon: Icon(Icons.monitor_heart_rounded),
+            onPressed: () {
+              /*
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Emp_Dashboard()),
+              ); // go back to the previous screen
+           */
+            },
+          ),*/
+
+          title: Center(
+            child: Text(
+              'Streakifyy',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 30.0,
+                  fontWeight: FontWeight.bold),
+            ),
+          ),
+          iconTheme: IconThemeData(color: Colors.white),
+
+          //centerTitle: true,
+        ),
         body: Column(
           children: [
             Spacer(),
             Row(
               children: [
                 Spacer(),
-                Text('Pako'),
+                Text('Test'),
                 Spacer(),
               ],
             ),
